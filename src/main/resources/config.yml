@@ -1,0 +1,6 @@
+# DO NOT TOUCH THESE 2 SETTINGS!!!
+version: 1.0.0
+cnfv: 1
+
+# Should the plugin be enabled? (Default: true)
+enabled: true
