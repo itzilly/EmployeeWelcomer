@@ -68,7 +68,6 @@ public class EmployeeWelcomerCommand implements CommandExecutor {
                     randomJoinMessagesList.add(" ");
                     randomJoinMessagesList.add(" ");
                     modifyFile.set("random-join-messages", randomJoinMessagesList);
-                    // TODO: Fix the quotes to be a list object
 
                     modifyFile.set("enable-quit-message", true);
                     modifyFile.set("broadcast-quit-message", "This is the message that will be broadcasted to the server when the target player leaves the server!");
@@ -79,7 +78,6 @@ public class EmployeeWelcomerCommand implements CommandExecutor {
                     randomQuitMessagesList.add(" ");
                     randomQuitMessagesList.add(" ");
                     modifyFile.set("random-quit-messages", randomQuitMessagesList);
-                    // TODO: Fix the quotes to be a list object
 
                     try {
                         modifyFile.save(playerFile);
