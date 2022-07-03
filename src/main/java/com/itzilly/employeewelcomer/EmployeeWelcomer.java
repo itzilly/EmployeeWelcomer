@@ -33,7 +33,9 @@ public final class EmployeeWelcomer extends JavaPlugin {
 
         System.out.println("Enabling EmployeeWelcomer by itzilly");
         getCommand("employeewelcomer").setExecutor(new EmployeeWelcomerCommand(this));
-        Bukkit.getPluginManager().registerEvents(new PlayerJoinListener(), this);
+
+        Bukkit.getPluginManager().registerEvents(new PlayerJoinListener(this), this);
+        Bukkit.getPluginManager().registerEvents(new PlayerQuitListener(this), this);
 
 
     }
