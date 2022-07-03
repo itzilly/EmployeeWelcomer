@@ -24,7 +24,7 @@ public class PlayerQuitListener implements Listener {
         Player player = e.getPlayer();
         System.out.println("Player Quit: " + player.getDisplayName());
 
-        File file = new File(main.getDataFolder() + "/players/" + player.getUniqueId() + "/yml");
+        File file = new File(main.getDataFolder() + "/players/" + player.getUniqueId().toString().replace("-", "") + ".yml");
         if (file.exists()) {
             YamlConfiguration playerConfig = YamlConfiguration.loadConfiguration(file);
 
@@ -33,6 +33,7 @@ public class PlayerQuitListener implements Listener {
                 List<String> randomQuitMessageList = playerConfig.getStringList("random-quit-messages");
                 int upperand = randomQuitMessageList.size();
                 String message = randomQuitMessageList.get(rand.nextInt(upperand));
+                System.out.println(message);
                 for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
                     onlinePlayer.sendMessage(message);
                 }

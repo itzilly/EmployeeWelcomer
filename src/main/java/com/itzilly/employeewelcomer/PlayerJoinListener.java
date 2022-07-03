@@ -23,7 +23,8 @@ public class PlayerJoinListener implements Listener {
     public void onPlayerJoin(PlayerJoinEvent e) {
         Player player = e.getPlayer();
         System.out.println("Player joined: " + player.getDisplayName());
-        File file = new File(main.getDataFolder() + "/players/" + player.getUniqueId() + "/yml");
+        File file = new File(main.getDataFolder() + "/players/" + player.getUniqueId().toString().replace("-", "") + ".yml");
+        System.out.println(file.getAbsolutePath());
         if (file.exists()) {
             System.out.println("File exists!");
             YamlConfiguration playerConfig = YamlConfiguration.loadConfiguration(file);
